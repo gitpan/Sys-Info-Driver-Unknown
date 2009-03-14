@@ -1,6 +1,6 @@
 ---
 name: Sys-Info-Driver-Unknown
-version: 0.69_05
+version: 0.69_06
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: Compatibility layer for Sys::Info
@@ -16,7 +16,7 @@ build_requires:
 provides:
   Sys::Info::Driver::Unknown:
     file: lib/Sys/Info/Driver/Unknown.pm
-    version: 0.69_05
+    version: 0.69_06
   Sys::Info::Driver::Unknown::Device:
     file: lib/Sys/Info/Driver/Unknown/Device.pm
     version: 0.69_01
