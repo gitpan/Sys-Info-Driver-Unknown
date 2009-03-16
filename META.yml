@@ -1,6 +1,6 @@
 ---
 name: Sys-Info-Driver-Unknown
-version: 0.69_07
+version: 0.69_08
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: Compatibility layer for Sys::Info
@@ -18,7 +18,7 @@ recommends:
 provides:
   Sys::Info::Driver::Unknown:
     file: lib/Sys/Info/Driver/Unknown.pm
-    version: 0.69_07
+    version: 0.69_08
   Sys::Info::Driver::Unknown::Device:
     file: lib/Sys/Info/Driver/Unknown/Device.pm
     version: 0.69_01
@@ -30,7 +30,7 @@ provides:
     version: 0.69_01
   Sys::Info::Driver::Unknown::OS:
     file: lib/Sys/Info/Driver/Unknown/OS.pm
-    version: 0.69_07
+    version: 0.69_08
 generated_by: Module::Build version 0.32
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
