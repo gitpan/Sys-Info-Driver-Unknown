@@ -4,7 +4,7 @@ use vars qw( $VERSION );
 use POSIX ();
 use Sys::Info::Constants qw( :unknown );
 
-$VERSION = '0.71';
+$VERSION = '0.72';
 
 # So, we don't support $^O yet, but we can try to emulate some features
 
@@ -108,6 +108,9 @@ Sys::Info::Driver::Unknown::OS - Compatibility layer for unsupported platforms
 -
 
 =head1 DESCRIPTION
+
+This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::OS>
+released on C<3 May 2009>.
 
 -
 

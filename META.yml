@@ -1,36 +1,41 @@
 ---
 name: Sys-Info-Driver-Unknown
-version: 0.71
+version: 0.72
 author:
   - 'Burak Gursoy <burak@cpan.org>'
 abstract: Compatibility layer for Sys::Info
 license: perl
 resources:
-  license: ~
+  license: http://dev.perl.org/licenses/
+  repository: http://bitbucket.org/burak/cpan-sys-info-driver-unknown/
 requires:
-  IO::File: 0
-  Sys::Info::Base: 0.70
+  Sys::Info::Base: 0.72
 build_requires:
   Test::More: 0.40
-  Test::Sys::Info: 0.13
+  Test::Sys::Info: 0.15
 recommends:
   Unix::Processors: 0
 provides:
   Sys::Info::Driver::Unknown:
     file: lib/Sys/Info/Driver/Unknown.pm
-    version: 0.71
+    version: 0.72
   Sys::Info::Driver::Unknown::Device:
     file: lib/Sys/Info/Driver/Unknown/Device.pm
-    version: 0.70
+    version: 0.72
   Sys::Info::Driver::Unknown::Device::CPU:
     file: lib/Sys/Info/Driver/Unknown/Device/CPU.pm
-    version: 0.70
+    version: 0.72
   Sys::Info::Driver::Unknown::Device::CPU::Env:
     file: lib/Sys/Info/Driver/Unknown/Device/CPU/Env.pm
-    version: 0.70
+    version: 0.72
   Sys::Info::Driver::Unknown::OS:
     file: lib/Sys/Info/Driver/Unknown/OS.pm
-    version: 0.71
+    version: 0.72
+no_index:
+  directory:
+    - monolithic_version
+    - builder
+    - t
 generated_by: Module::Build version 0.32
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

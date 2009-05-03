@@ -2,7 +2,7 @@ package Sys::Info::Driver::Unknown::Device::CPU::Env;
 use strict;
 use vars qw( $VERSION );
 
-$VERSION = '0.70';
+$VERSION = '0.72';
 
 my(%INTEL, %AMD, %OTHER_ID, %OTHER, %CPU, $INSTALLED);
 
@@ -271,6 +271,9 @@ Sys::Info::Driver::Unknown::Device::CPU::Env - Fetch CPU information from %ENV
 Nothing public here.
 
 =head1 DESCRIPTION
+
+This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::Device::CPU::Env>
+released on C<3 May 2009>.
 
 These C<%ENV> keys are recognised by this module:
 

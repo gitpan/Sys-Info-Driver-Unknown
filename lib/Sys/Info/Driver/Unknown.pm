@@ -2,7 +2,7 @@ package Sys::Info::Driver::Unknown;
 use strict;
 use vars qw( $VERSION );
 
-$VERSION = '0.71';
+$VERSION = '0.72';
 
 1;
 
@@ -17,6 +17,9 @@ Sys::Info::Driver::Unknown - Compatibility layer for Sys::Info
     use Sys::Info::Driver::Unknown;
 
 =head1 DESCRIPTION
+
+This document describes version C<0.72> of C<Sys::Info::Driver::Unknown>
+released on C<3 May 2009>.
 
 This is the main module in the C<Unknown> driver collection.
 

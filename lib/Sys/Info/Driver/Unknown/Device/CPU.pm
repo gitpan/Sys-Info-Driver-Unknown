@@ -3,7 +3,7 @@ use strict;
 use vars qw($VERSION $UP);
 use base qw(Sys::Info::Driver::Unknown::Device::CPU::Env);
 
-$VERSION = '0.70';
+$VERSION = '0.72';
 
 BEGIN {
     local $SIG{__DIE__};
@@ -55,6 +55,9 @@ Sys::Info::Driver::Unknown::Device::CPU - Compatibility layer for unsupported pl
 -
 
 =head1 DESCRIPTION
+
+This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::Device::CPU>
+released on C<3 May 2009>.
 
 L<Unix::Processors> is recommended for
 unsupported platforms.

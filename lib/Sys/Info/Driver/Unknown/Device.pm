@@ -2,7 +2,7 @@ package Sys::Info::Driver::Unknown::Device;
 use strict;
 use vars qw( $VERSION );
 
-$VERSION = '0.70';
+$VERSION = '0.72';
 
 1;
 
@@ -17,6 +17,9 @@ Sys::Info::Driver::Unknown::Device - Base class for Unknown device drivers
     use base qw( Sys::Info::Driver::Unknown::Device );
 
 =head1 DESCRIPTION
+
+This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::Device>
+released on C<3 May 2009>.
 
 Base class for Unknown device drivers.
 
