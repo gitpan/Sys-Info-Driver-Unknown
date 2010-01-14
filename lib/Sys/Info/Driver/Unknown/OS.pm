@@ -1,10 +1,11 @@
 package Sys::Info::Driver::Unknown::OS;
 use strict;
+use warnings;
 use vars qw( $VERSION );
 use POSIX ();
 use Sys::Info::Constants qw( :unknown );
 
-$VERSION = '0.72';
+$VERSION = '0.73';
 
 # So, we don't support $^O yet, but we can try to emulate some features
 
@@ -15,7 +16,7 @@ BEGIN {
                  ;
     *domain_name = *edition
                  = *logon_server
-                 = sub {   }
+                 = sub {}
                  ;
 }
 
@@ -51,7 +52,7 @@ sub tz {
          ? $ENV{TZ}
          : do {
                require POSIX;
-               POSIX::strftime("%Z", localtime);
+               POSIX::strftime('%Z', localtime);
            };
 }
 
@@ -63,30 +64,30 @@ sub fs {
 }
 
 sub name {
-    my $self  = shift;
-    my %opt   = @_ % 2 ? () : (@_);
-    my @uname = POSIX::uname();
-    my $rv    = $opt{long} ? join(' ', @uname[UN_OS_SYSNAME, UN_OS_RELEASE])
-              :              $uname[UN_OS_SYSNAME]
+    my($self, @args) = @_;
+    my %opt   = @args % 2 ? () : @args;
+    my $uname = $self->uname;
+    my $rv    = $opt{long} ? join(q{ }, $uname->{sysname}, $uname->{release})
+              :              $uname->{sysname}
               ;
     return $rv;
 }
 
-sub version { (POSIX::uname)[UN_OS_RELEASE] }
+sub version { return shift->uname->{release} }
 
 sub build {
-    my $build = (POSIX::uname)[UN_OS_VERSION] || return;
+    my $build = shift->uname->{version} || return;
     if ( $build =~ UN_RE_BUILD ) {
         return $1;
     }
     return $build;
 }
 
-sub node_name { (POSIX::uname)[UN_OS_NODENAME] }
+sub node_name { return shift->uname->{nodename} }
 
 sub login_name {
     my $name;
-    eval { $name = getlogin() };
+    my $eok = eval { $name = getlogin };
     return $name;
 }
 
@@ -109,8 +110,8 @@ Sys::Info::Driver::Unknown::OS - Compatibility layer for unsupported platforms
 
 =head1 DESCRIPTION
 
-This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::OS>
-released on C<3 May 2009>.
+This document describes version C<0.73> of C<Sys::Info::Driver::Unknown::OS>
+released on C<14 January 2010>.
 
 -
 
@@ -154,16 +155,16 @@ L<Sys::Info>, L<Sys::Info::OS>.
 
 =head1 AUTHOR
 
-Burak Gürsoy, E<lt>burakE<64>cpan.orgE<gt>
+Burak Gursoy <burak@cpan.org>.
 
 =head1 COPYRIGHT
 
-Copyright 2006-2009 Burak Gürsoy. All rights reserved.
+Copyright 2006 - 2010 Burak Gursoy. All rights reserved.
 
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify 
-it under the same terms as Perl itself, either Perl version 5.10.0 or, 
+it under the same terms as Perl itself, either Perl version 5.10.1 or, 
 at your option, any later version of Perl 5 you may have available.
 
 =cut

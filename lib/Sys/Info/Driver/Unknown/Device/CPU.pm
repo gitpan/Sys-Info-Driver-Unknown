@@ -1,22 +1,22 @@
 package Sys::Info::Driver::Unknown::Device::CPU;
 use strict;
+use warnings;
 use vars qw($VERSION $UP);
 use base qw(Sys::Info::Driver::Unknown::Device::CPU::Env);
 
-$VERSION = '0.72';
+$VERSION = '0.73';
 
 BEGIN {
     local $SIG{__DIE__};
     local $@;
-    eval {
+    my $eok = eval {
         require Unix::Processors;
         Unix::Processors->import;
     };
-    $UP = Unix::Processors->new if ! $@;
+    $UP = Unix::Processors->new if ! $@ && $eok;
 }
 
-sub load {0}
-
+sub load    {}
 sub bitness {}
 
 sub identify {
@@ -52,12 +52,12 @@ Sys::Info::Driver::Unknown::Device::CPU - Compatibility layer for unsupported pl
 
 =head1 SYNOPSIS
 
--
+See L<Sys::Info::Device::CPU>.
 
 =head1 DESCRIPTION
 
-This document describes version C<0.72> of C<Sys::Info::Driver::Unknown::Device::CPU>
-released on C<3 May 2009>.
+This document describes version C<0.73> of C<Sys::Info::Driver::Unknown::Device::CPU>
+released on C<14 January 2010>.
 
 L<Unix::Processors> is recommended for
 unsupported platforms.
@@ -82,16 +82,16 @@ L<Sys::Info>, L<Sys::Info::CPU>, L<Unix::Processors>.
 
 =head1 AUTHOR
 
-Burak Gürsoy, E<lt>burakE<64>cpan.orgE<gt>
+Burak Gursoy <burak@cpan.org>.
 
 =head1 COPYRIGHT
 
-Copyright 2006-2009 Burak Gürsoy. All rights reserved.
+Copyright 2006 - 2010 Burak Gursoy. All rights reserved.
 
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify 
-it under the same terms as Perl itself, either Perl version 5.10.0 or, 
+it under the same terms as Perl itself, either Perl version 5.10.1 or, 
 at your option, any later version of Perl 5 you may have available.
 
 =cut
