@@ -5,7 +5,7 @@ use vars qw( $VERSION );
 use POSIX ();
 use Sys::Info::Constants qw( :unknown );
 
-$VERSION = '0.73';
+$VERSION = '0.78';
 
 # So, we don't support $^O yet, but we can try to emulate some features
 
@@ -110,8 +110,8 @@ Sys::Info::Driver::Unknown::OS - Compatibility layer for unsupported platforms
 
 =head1 DESCRIPTION
 
-This document describes version C<0.73> of C<Sys::Info::Driver::Unknown::OS>
-released on C<14 January 2010>.
+This document describes version C<0.78> of C<Sys::Info::Driver::Unknown::OS>
+released on C<17 April 2011>.
 
 -
 
@@ -159,12 +159,12 @@ Burak Gursoy <burak@cpan.org>.
 
 =head1 COPYRIGHT
 
-Copyright 2006 - 2010 Burak Gursoy. All rights reserved.
+Copyright 2006 - 2011 Burak Gursoy. All rights reserved.
 
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify 
-it under the same terms as Perl itself, either Perl version 5.10.1 or, 
+it under the same terms as Perl itself, either Perl version 5.12.3 or, 
 at your option, any later version of Perl 5 you may have available.
 
 =cut
